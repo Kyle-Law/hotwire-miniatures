@@ -1,0 +1,5 @@
+<%= turbo_frame_tag dom_id(@item) do%>
+  <%= render @item%>
+<% end%>
+<%= link_to 'edit',edit_item_path(@item)%>
+<%= link_to 'back',:back%>

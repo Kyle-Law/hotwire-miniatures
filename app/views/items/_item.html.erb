@@ -1,0 +1,7 @@
+<%= turbo_frame_tag dom_id(item) do%>
+  <div class="card">
+    <p>Description: <%=link_to item.description, item, data: {"turbo-frame":"_top"}%></p>
+    <p>price: <%=item.price%></p>
+    <p>quantity: <%=item.quantity%></p>
+  </div>
+<% end %>

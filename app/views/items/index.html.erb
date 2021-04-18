@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Items</h1>
+
+<%= turbo_stream_from 'items'%>
+
+<%= turbo_frame_tag 'items' do%>
+  <%= render @items%>
+<% end %>
+<br>
+
+<%= link_to 'New Item', new_item_path %>
