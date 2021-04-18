@@ -64,6 +64,6 @@ class SharesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def share_params
-      params.require(:share).permit(:name, :price, :ticker_symbol)
+      params.require(:share).permit(:name, :price, :ticker_symbol, :open_price, :closed_price, :beta)
     end
 end

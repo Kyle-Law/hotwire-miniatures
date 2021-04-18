@@ -15,5 +15,20 @@
   <%= @share.ticker_symbol %>
 </p>
 
+<p>
+  <strong>Open price:</strong>
+  <%= @share.open_price %>
+</p>
+
+<p>
+  <strong>Closed price:</strong>
+  <%= @share.closed_price %>
+</p>
+
+<p>
+  <strong>Beta:</strong>
+  <%= @share.beta %>
+</p>
+
 <%= link_to 'Edit', edit_share_path(@share) %> |
 <%= link_to 'Back', shares_path %>
