@@ -5,4 +5,8 @@ module SharesHelper
     number_to_percentage(percent,precision:2)
   end
 
+  def colorize(share)
+    share.price > share.open_price ? 'green' : 'red'
+  end
+
 end

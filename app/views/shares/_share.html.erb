@@ -1,5 +1,5 @@
 <%= turbo_frame_tag dom_id(share) do%>
   <div class="card">
-    <p><%=link_to "#{share.name}(#{share.ticker_symbol})",share_path(share), data:{"turbo-frame":"_top"} %> - <%=number_to_currency(share.price,unit:'$')%> (<%=change_percent(share)%>)</p>
+    <p><%=link_to "#{share.name}(#{share.ticker_symbol})",share_path(share), data:{"turbo-frame":"_top"} %> - <%=number_to_currency(share.price,unit:'$')%> <span class="<%="text_#{colorize(share)}"%>"> (<%=change_percent(share)%>)</span></p>
   </div>
 <% end %>
