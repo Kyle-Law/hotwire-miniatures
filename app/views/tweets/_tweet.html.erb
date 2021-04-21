@@ -1,0 +1,40 @@
+<% if true%>
+<%= turbo_frame_tag dom_id(tweet) do%>
+  <div class="card card-body m-2">
+    <%= tweet.id%>
+    <div><%=tweet.body%></div>
+
+    <%= button_to "Likes (#{tweet.likes_count})", tweet_like_path(tweet), method: :post %>
+    <%= button_to "Retweets (#{tweet.retweets_count})", tweet_retweet_path(tweet), method: :post %>
+    <%= link_to 'Edit', edit_tweet_path(tweet)%>
+    <% if tweet.body != 'kyle'%>
+      <%= form_with(model: tweet,id:dom_id(tweet)) do |form| %>
+        <% if tweet.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(tweet.errors.count, "error") %> prohibited this tweet from being saved:</h2>
+
+            <ul>
+              <% tweet.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= form.label :body %><br/>
+          <%= form.text_area :body %>
+        </div>
+
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <% end %>
+    <% else%>
+      no form hehe
+    <% end %>
+
+  </div>
+<% end %>
+
+<% end %>

@@ -1,6 +1,14 @@
 class SharesController < ApplicationController
   before_action :set_share, only: %i[ show edit update destroy ]
 
+  def start
+
+    # @shares = Share.all
+    # redirect_to shares_path
+    # Post request has to be in form
+    # Share.stock_market_open(true)
+  end
+
   # GET /shares or /shares.json
   def index
     @shares = Share.all
