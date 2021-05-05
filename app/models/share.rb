@@ -5,7 +5,7 @@ class Share < ApplicationRecord
 
   def self.stock_market_open(boolean)
     update_count = 0
-    Share.find_each {|s| update(open_price: s.closed_price)}
+    Share.find_each {|s| s.update(open_price: s.closed_price)}
     bullish = [true,false].sample
     market_change_percent = bullish ? rand(0..3.0) : rand(-3.0..0)
     while boolean && update_count < 10
@@ -14,11 +14,11 @@ class Share < ApplicationRecord
       Share.find_each do |s|
         change = market_change / 100 * s.beta * s.open_price
         s.update(price: s.open_price + change)
-        update_count +=1
       end
+      update_count +=1
       sleep(1.seconds)
     end
-    Share.find_each {|s| update(closed_price: s.price)}
+    Share.find_each {|s| s.update(closed_price: s.price)}
   end
 
   def self.update_price

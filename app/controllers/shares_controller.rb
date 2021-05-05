@@ -2,11 +2,13 @@ class SharesController < ApplicationController
   before_action :set_share, only: %i[ show edit update destroy ]
 
   def start
+    p 'test'
+    Share.find_each {|s| s.update(open_price: s.closed_price)}
 
     # @shares = Share.all
     # redirect_to shares_path
     # Post request has to be in form
-    # Share.stock_market_open(true)
+    Share.stock_market_open(true)
   end
 
   # GET /shares or /shares.json

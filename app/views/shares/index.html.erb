@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Shares</h1>
-<%= link_to 'Stock Market Open', shares_start_path%>
+<%= link_to 'Stock Market Open', shares_start_path, method: :post %>
 
 <%= turbo_stream_from 'shares'%>
 
