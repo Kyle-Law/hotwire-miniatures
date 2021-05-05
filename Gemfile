@@ -50,3 +50,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "hotwire-rails", "~> 0.1.3"
 
 gem "whenever", "~> 1.0"
+
+gem "pagy", "~> 4.5"
+
+gem "faker", "~> 2.17"
