@@ -1,0 +1,10 @@
+<%= turbo_frame_tag book do%>
+  <div class="card my-2 <%= ['bg-primary','bg-secondary','bg-success','bg-warning','bg-info'].sample(1)[0] %> text-white">
+    <div class="card-body">
+      <div class="card-title"><%=book.title%></div>
+      <p>Publisher: <%=book.publisher%></p>
+      <p>Author: <%=book.author%></p>
+      <p>Genre: <%=book.genre%></p>
+    </div>
+  </div>
+<% end %>
