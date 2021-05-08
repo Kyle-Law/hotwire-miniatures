@@ -1,0 +1,14 @@
+<%= turbo_frame_tag 'listings', action: 'append' do%>
+  <% @listings.each do |listing|%>
+    <p><%= listing.name%></p>
+  <% end %>
+  <% if @pagy.next%>
+    <%= turbo_frame_tag 'listings',loading: :lazy, src: records_listings_path(page: @pagy.next) do%>
+      <div class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'stimulus/index'
+  resources :listings do
+    get :records, on: :collection
+  end
+  resources :posts
   resources :books
   resources :articles
 resources :todos

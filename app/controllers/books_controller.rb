@@ -3,7 +3,14 @@ class BooksController < ApplicationController
 
   # GET /books or /books.json
   def index
-    @books = Book.all
+    @pagy, @books = pagy(Book.all,items: 20)
+
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: {entries: render_to_string(partial:"posts",formats:[:html]),pagination:view_context.pagy_nav(@page)}
+      }
+    end
   end
 
   # GET /books/1 or /books/1.json

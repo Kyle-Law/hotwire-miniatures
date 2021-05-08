@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+<%= turbo_frame_tag dom_id(@post) do %>
+  <article data-controller="post-infinite-scroll" data-post-infinite-scroll-path-value="<%= post_path(@post) %>" data-post-infinite-scroll-target="entry">
+    <h2><%= @post.title %></h2>
+    <p><%= @post.body %></p>
+    <%= link_to 'Edit', edit_post_path(@post), data: { turbo_frame: "_top" } %> |
+    <%= link_to 'Back', posts_path, data: { turbo_frame: "_top" }  %>
+  </article>
+  <%= turbo_frame_tag dom_id(@next_post), loading: :lazy, src: post_path(@next_post) do %>
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  <% end if @next_post.present? %>
+<% end %>

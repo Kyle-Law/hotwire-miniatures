@@ -1,0 +1,12 @@
+<div class="bg-lightest-bg">
+  All Listings
+  <div class="row mx-0">
+    <%= turbo_frame_tag 'listings', src: records_listings_path do %>
+      <div class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

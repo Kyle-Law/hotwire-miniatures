@@ -10,3 +10,11 @@
 20.times do |n|
   Book.create(title:Faker::Book.title,author:Faker::Book.author,publisher: Faker::Book.publisher, genre: Faker::Book.genre)
 end
+
+10.times do |i|
+    Post.create(title: "Post #{i+1}", body: Faker::Lorem.paragraph(sentence_count: 500))
+end
+
+1000.times do |i|
+  Listing.create(name: Faker::Restaurant.name)
+end
