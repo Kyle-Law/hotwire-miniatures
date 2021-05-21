@@ -6,11 +6,11 @@
   <%= turbo_stream_from 'books'%>
 
   <%= turbo_frame_tag 'books' do %>
-    <div class="auto-grid" data-book-infinite-scroll-target="entries">
-      <%= render @books%>
-    </div>
     <div data-book-infinite-scroll-target="pagination">
         <%==  pagy_bootstrap_nav(@pagy)%>
+    </div>
+    <div class="auto-grid" data-book-infinite-scroll-target="entries">
+      <%= render @books%>
     </div>
   <% end %>
 </div>

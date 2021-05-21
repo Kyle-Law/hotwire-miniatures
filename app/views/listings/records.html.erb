@@ -1,6 +1,6 @@
 <%= turbo_frame_tag 'listings', action: 'append' do%>
   <% @listings.each do |listing|%>
-    <p><%= listing.name%></p>
+    <p><%=listing.id%> - <%= listing.name%></p>
   <% end %>
   <% if @pagy.next%>
     <%= turbo_frame_tag 'listings',loading: :lazy, src: records_listings_path(page: @pagy.next) do%>

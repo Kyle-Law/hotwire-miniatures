@@ -1,11 +1,14 @@
 <h1>Stimulus#index</h1>
 <p>Find me in app/views/stimulus/index.html.erb</p>
 <div data-controller="accordian">
-  <button data-action="accordian#toggle">Show</button>
-  <span>
-    <i data-accordian-target="icon" class="fas fa-chevron-down "></i>
-  </span>
-  <div data-accordian-target="details" class="details">
+  <button class="btn btn-primary" data-action="accordian#toggle">
+    Show
+    <span>
+      <i data-accordian-target="icon" class="fas fa-chevron-down "></i>
+    </span>
+  </button>
+
+  <div data-accordian-target="details" class="details my-2">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias error quidem a, cumque voluptates dolorem nesciunt. Culpa earum esse impedit quas? Eum perspiciatis asperiores laudantium nostrum magni officiis ipsum ipsa!
   </div>
 </div>

@@ -1,7 +1,7 @@
 <%= turbo_frame_tag book do%>
   <div class="card my-2 ">
     <div class="card-body">
-      <div class="card-title"><%=book.title%></div>
+      <div class="card-title"><%=book.id%> - <%=book.title%></div>
       <p>Publisher: <%=book.publisher%></p>
       <p>Author: <%=book.author%></p>
       <p>Genre: <%=book.genre%></p>
