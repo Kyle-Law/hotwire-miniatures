@@ -2,11 +2,11 @@
 
 > My mini-projects with Hotwire
 
-StimulusJS is a modest JavaScript framework built by Basecamp in Feb 2018, and updated to Version 2.0.0 in Dec 2020 with the additional Value & Class API. This repo stores all my experiments with StimulusJS 2.0.0.
+Hotwire is the upcoming Frontend paradigm of Ruby on Rails, which consists of Turbo (Turbo Drive, Turbo Frame, Turbo Stream), StimulusJS, and Strada (to be released).
+
 
 ## Presentation
-- Live Link: https://stimulus-miniatures.herokuapp.com/
-- Tutorial Link:
+- Live Link: https://hotwire-miniatures.herokuapp.com/
 
 ## Built With
 
